@@ -1,10 +1,15 @@
+Apanar dewa `sketch_sep21a.ino` code-er upor base kore **CYD PlayDash** namer ekti purno-ango ebong professional `README.md` file niche dewa holo. Eta apnar GitHub repository-te khub shundor ebong structured babe kaj korbe.
+
+---
+
+```markdown
 # 📱 CYD PlayDash - Interactive ESP32 Touch Dashboard & Gaming Console
 
 ![ESP32](https://img.shields.io/badge/ESP32-2432S028R-blue?style=for-the-badge&logo=espressif)
 ![Framework](https://img.shields.io/badge/Arduino-IDE-00979D?style=for-the-badge&logo=arduino)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-**CYD PlayDash** is an action-oriented, interactive touch GUI dashboard designed specifically for the **Cheap Yellow Display (CYD)** — `ESP32-2432S028R` (2.8" ST7789 TFT version)[cite: 1]. It transforms your CYD into a dynamic smart hub, combining a digital/analog clock, live weather updates, timers, and 8 built-in retro mini-games into a single smooth 320x240 touch interface[cite: 1].
+**CYD PlayDash** is an action-oriented, interactive touch GUI dashboard designed specifically for the **Cheap Yellow Display (CYD)** — `ESP32-2432S028R` (2.8" ST7789 TFT version)[cite: 1]. It transforms your device into a smart hub, combining a digital/analog clock, live weather updates, customizable timers, detailed settings, and 8 built-in retro mini-games into a single smooth 320x240 touch interface[cite: 1].
 
 ---
 
@@ -40,19 +45,17 @@
 * 🌤️ **Real-Time Weather:** Powered by the Open-Meteo API. Displays current temperature, feels-like temp, wind speed, humidity, and a 3-day forecast.
 
 
-* 🎮 **8 Embedded Action & Puzzle Games**:
-
-
-1. **Tic-Tac-Toe (X & O)** — Play against a CPU opponent.
+* 🎮 **8 Embedded Retro Games:**
+1. **Tic-Tac-Toe (X & O)** — Play against an AI CPU opponent.
 
 
 2. **Snake** — Classic arcade snake game with touch-swipe steering.
 
 
-3. **Memory** — Flip and match color and shape pairs.
+3. **Memory Match** — Flip and match color/shape pairs.
 
 
-4. **Whack-a-Mole** — Speed tapping reaction game with a 30-second timer.
+4. **Whack-a-Mole** — Speed tapping reaction game.
 
 
 5. **Reflex Test** — Millisecond accuracy response test.
@@ -64,7 +67,7 @@
 7. **Breakout (Bricks)** — Paddle and ball physics arcade game.
 
 
-8. **Simon** — Memory pattern game with sound frequencies.
+8. **Simon Says** — Memory pattern game with sound feedback.
 
 
 
@@ -72,7 +75,7 @@
 * 🎨 **5 Custom Themes:** Midnight, Sunset, Forest, Light, and Amoled.
 
 
-* ⚙️ **Persistent Preferences:** Automatically saves theme selection, screen brightness, 12/24h toggle, sound toggle, and temperature units (°C/°F) to NVS storage.
+* ⚙️ **Persistent Preferences:** Automatically saves theme selection, screen brightness, 12/24h toggle, sound toggle, and temperature units (°C/°F) using NVS EEPROM.
 
 
 
@@ -89,7 +92,7 @@
 * **Touch Controller:** XPT2046 SPI Touchscreen
 
 
-* **Audio:** Onboard Piezo Buzzer / Speaker on GPIO 26 (or GPIO 2 depending on core)
+* **Audio:** Onboard Piezo Buzzer / Speaker on GPIO 26
 
 
 
@@ -149,27 +152,28 @@ git clone [https://github.com/your-username/CYD-PlayDash.git](https://github.com
 
 
 2. **Configure Wi-Fi & Location:**
-Open `sketch_sep21a.ino` and edit the `USER SETTINGS` block:
+Open the sketch file (`sketch_sep21a.ino`) and edit the user configuration section:
 
 
 ```cpp
 const char* WIFI_SSID = "YOUR_WIFI_NAME";
 const char* WIFI_PASS = "YOUR_WIFI_PASSWORD";
-const char* CITY_NAME = "Your City";
-const float LATITUDE  = 24.3745f; // Your latitude
-const float LONGITUDE = 88.6042f; // Your longitude
+const char* CITY_NAME = "Rajshahi";
+const float LATITUDE  = 24.3745f; 
+const float LONGITUDE = 88.6042f; 
 
 ```
 
 
-3. **Arduino IDE Settings**:
-
-
+3. **Arduino IDE Settings:**
 * **Board:** `ESP32 Dev Module`
-* **Partition Scheme:** `Huge APP` or `Default 4MB`
+
+* **Partition Scheme:** `Huge APP (3MB No OTA / 1MB SPIFFS)` or `Default 4MB`
+
+* **Flash Frequency:** `80MHz`
 
 
-4. **Upload the code** to your ESP32 board.
+4. **Upload the code** to your ESP32 CYD board.
 
 
 
